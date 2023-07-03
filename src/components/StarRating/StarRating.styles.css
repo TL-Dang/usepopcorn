@@ -1,0 +1,31 @@
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.starContainer {
+  display: flex;
+}
+
+.textContainer {
+  line-height: 1;
+  margin: 0;
+  color: gold;
+  font-size: 30px;
+}
+
+.starStyle {
+  width: 48px;
+  height: 48px;
+  display: block;
+  cursor: 'pointer';
+}
+
+/*
+
+EMPTY STAR
+
+
+
+*/
