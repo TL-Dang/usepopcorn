@@ -1,12 +1,29 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import './StarRating.styles.css';
+
+StarRating.propTypes = {
+  maxRating: PropTypes.number,
+  defaultRating: PropTypes.number,
+  // color: PropTypes.string,
+  // size: PropTypes.number,
+  messages: PropTypes.array,
+  className: PropTypes.string,
+  onSetRating: PropTypes.func,
+  onSetRating: PropTypes.func,
+  // onSetRating: PropTypes.object
+  // onSetRating: PropTypes. bool,
+};
 
 export default function StarRating({
   maxRating = 5,
-  color = '#FFD700',
-  size = 45,
+  // color = '#FFD700',
+  // size = 45,
+  messages = [],
+  defaultRating = 0,
 }) {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
 
   function handleRating(rating) {
@@ -26,7 +43,11 @@ export default function StarRating({
           />
         ))}
       </div>
-      <p className='textContainer'>{tempRating || rating || ''}</p>
+      <p className='textContainer'>
+        {messages.length === maxRating
+          ? messages[tempRating ? tempRating - 1 : rating - 1]
+          : tempRating || rating || ''}
+      </p>
     </div>
   );
 }
