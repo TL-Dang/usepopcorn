@@ -7,10 +7,9 @@ StarRating.propTypes = {
   maxRating: PropTypes.number,
   defaultRating: PropTypes.number,
   // color: PropTypes.string,
-  // size: PropTypes.number,
+  size: PropTypes.number,
   messages: PropTypes.array,
   className: PropTypes.string,
-  onSetRating: PropTypes.func,
   onSetRating: PropTypes.func,
   // onSetRating: PropTypes.object
   // onSetRating: PropTypes. bool,
